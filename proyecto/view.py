@@ -1,6 +1,6 @@
 from django.http import HttpResponse 
 from datetime import datetime
-from django.template import context, Template
+from django.template import Template, Context
 
 
 
@@ -19,14 +19,18 @@ def Dia(request):
     
     return HttpResponse(archivoTexto)
 
-def probandoElTemplate(self):
-    miHtml1 = open("C:\Users\jigwo\Desktop\Estudios\DjandoPrueba\proyecto\plantillas\template1.html")
+
+
+
+def probandoTemplate(self):
     
-    plantilla = Template(miHtml1.read())
+    miHtml = open("C:/Users/jigwo/Desktop/Estudios/DjandoPrueba/proyecto/plantillas/template1.html")
     
-    miHtml1.close()
+    plantilla = Template(miHtml.read())
     
-    miContexto = context(miContexto)
+    miHtml.close()
+    
+    miContexto = Context()
     
     documento = plantilla.render(miContexto)
     
